@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:taskmanagement/mainpage.dart';
 import 'package:taskmanagement/splash.dart';
 
 void main() {
