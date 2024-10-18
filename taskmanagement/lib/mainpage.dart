@@ -28,10 +28,10 @@ class AddTasksState extends State<AddTasks> {
   }
 
   Future<void> _loadTask() async {
-    List<String> loadedDepartments = await Deptclass.loadTask();
-    List<String> loadedcompleted = await Deptclass.completedTask();
+    List<String> loadedTasks = await Taskclass.loadTask();
+    List<String> loadedcompleted = await Taskclass.completedTask();
     setState(() {
-      tasklist = loadedDepartments;
+      tasklist = loadedTasks;
       taskCompleted = loadedcompleted;
       //taskCompleted = List<bool>.filled(tasklist.length, false);
     });
@@ -53,7 +53,7 @@ class AddTasksState extends State<AddTasks> {
           taskCompleted.add("false");
         }
       });
-      await Deptclass.saveTask(tasklist, taskCompleted);
+      await Taskclass.saveTask(tasklist, taskCompleted);
     }
   }
 
@@ -62,7 +62,7 @@ class AddTasksState extends State<AddTasks> {
       tasklist.removeAt(index);
       taskCompleted.removeAt(index);
     });
-    await Deptclass.saveTask(tasklist, taskCompleted);
+    await Taskclass.saveTask(tasklist, taskCompleted);
   }
 
   void startEdit(int index) {

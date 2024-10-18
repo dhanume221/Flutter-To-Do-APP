@@ -1,6 +1,6 @@
 import 'package:shared_preferences/shared_preferences.dart';
 
-class Deptclass {
+class Taskclass {
   static const String _itemsKey = 'tasklist';
 
   // Save the list of departments to SharedPreferences
